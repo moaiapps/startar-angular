@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="container">
+  <h1 class="mt-4 mb-4">Login</h1>
+  <form>
+    <div class="mb-3">
+      <label for="inputLoginId" class="form-label">Login Id</label>
+      <input type="loginId" class="form-control" id="inputLoginId" aria-describedby="emailHelp" [(ngModel)]="form.loginId" name="loginId">
+    </div>
+    <div class="mb-3">
+      <label for="inputPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="inputPassword" [(ngModel)]="form.password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onLoginClick()">Login</button>
+  </form>
+</div>
+
+<!-- error dialog -->
+<ng-template #errorDialog let-modal>
+  <div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Login</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">Login Failed</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
+	</div>
+</ng-template>
